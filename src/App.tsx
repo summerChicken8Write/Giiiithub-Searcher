@@ -3,9 +3,13 @@ import React, {
   useEffect
 } from 'react';
 import {
-
+  Input,
 } from 'antd';
+import List from './component/List';
+import History from './component/History'
 import './App.css';
+
+const { Search } = Input;
 
 const App: React.FC = () => {
   // 搜索关键词
@@ -21,12 +25,12 @@ const App: React.FC = () => {
     <div className="App">
       {/* 搜索 */}
       <div className="search-wrapper">
-
+        <Search />
       </div>
 
       {/* 搜索历史 */}
       <div className="history-wrapper">
-
+        <History />
       </div>
 
       {/* 筛选器 */}
@@ -36,7 +40,7 @@ const App: React.FC = () => {
 
       {/* 列表 */}
       <div className="list-wrapper">
-
+        <List />
       </div>
     </div>
   );
