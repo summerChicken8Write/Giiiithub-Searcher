@@ -1,10 +1,26 @@
 import React from 'react'
+import _ from 'lodash'
 
-const List: React.FC = () => {
+interface IPorps {
+    listData: any[]
+}
+
+const List: React.FC<IPorps> = (props) => {
+    const {
+        listData
+    } = props
+
     return (
-        <div className="list">
-            list
-        </div>
+        <ul className="list">
+            {_.map(listData, (itm, idx) => <li
+                className="list_item"
+                key={ idx }
+            >
+                <p>name: {itm.node.name}</p>
+                <p>description: {itm.node.description}</p>
+                <p>star: {itm.node.stargazers.totalCount}</p>
+            </li>)}
+        </ul>
     )
 }
 
