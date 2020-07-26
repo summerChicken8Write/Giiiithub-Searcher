@@ -10,7 +10,7 @@ import List from './component/List';
 import History from './component/History'
 import './App.css';
 import {
-  // useDebounce
+  useDebounce,
   getHistory,
   addHistory,
   cleanHistory,
@@ -27,11 +27,11 @@ const App: React.FC = () => {
   // // 筛选器配置
   let [filterOpt, setFilterOpt] = useState<object>({})
 
-  useEffect(() => {
+  useDebounce(() => {
     getListData(searchWord)
     setHistory(preState => _.uniq(_.filter([...preState, searchWord])))
     addHistory(searchWord)
-  }, [searchWord]) 
+  }, 1000, [searchWord])
 
   async function getListData (searchWord: string) {
     let { data } = await fetchData({

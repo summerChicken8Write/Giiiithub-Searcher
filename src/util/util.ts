@@ -7,21 +7,17 @@ import _ from 'lodash'
 
 const KEY_WORD_HISTORY = "keyWordHistory"
 
-// export const useDebounce = function (fn, delay = 500, dep = []) {
-//     const { current } = useRef({ fn, timer: null });
-//     useEffect(function () {
-//         current.fn = fn;
-//     }, [fn]);
-
-//     return useCallback(function f(...args) {
-//         if (current.timer) {
-//             clearTimeout(current.timer);
-//         }
-//         current.timer = setTimeout(() => {
-//         current.fn.call(this, ...args);
-//         }, delay);
-//     }, dep)
-// }
+export const useDebounce = function (fn: any, delay: number, dep: any[] = []) {
+    let timeout: any = useRef()
+    useEffect(() => {
+        if (timeout.current) {
+            clearTimeout(timeout.current)
+        }
+        timeout.current = setTimeout(() => {
+            fn()
+        }, delay)
+    }, dep)
+}
 
 export const getHistory = () => {
     let kwh = window.localStorage.getItem(KEY_WORD_HISTORY)
