@@ -3,12 +3,18 @@ import _ from 'lodash'
 
 interface IPorps {
     listData: any[]
+    highlightKey: string
 }
 
 const List: React.FC<IPorps> = (props) => {
     const {
-        listData
+        listData,
+        highlightKey,
     } = props
+
+    const highLight = (html: string) => {
+        return html.replace(highlightKey, `<span className="highlightKey">${highlightKey}</span>`)
+    }
 
     return (
         <ul className="list">
@@ -17,7 +23,7 @@ const List: React.FC<IPorps> = (props) => {
                 key={ idx }
             >
                 <p>name: {itm.node.name}</p>
-                <p>description: {itm.node.description}</p>
+                <p>description: <span dangerouslySetInnerHTML={{__html: highLight(itm.node.descriptionHTML)}} /></p>
                 <p>star: {itm.node.stargazers.totalCount}</p>
             </li>)}
         </ul>

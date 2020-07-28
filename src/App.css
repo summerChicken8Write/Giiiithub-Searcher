@@ -1,2 +1,26 @@
 @import '~antd/dist/antd.css';
 
+.app {
+    margin: 30px;
+}
+.title {
+    font-size: 28px;
+    text-align: center;
+}
+.search-wrapper,.history-wrapper,.filter-wrapper,.list-wrapper,.pagination-wrapper {
+    max-width: 500px;
+    margin: 30px auto;
+}
+.filter-wrapper {
+    text-align: right;
+}
+.list-wrapper {
+    position: relative;
+    min-height: 400px;
+}
+.list-wrapper-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

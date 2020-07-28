@@ -6,6 +6,7 @@ import {
 import { 
     DeleteOutlined
 } from '@ant-design/icons'
+import './style/History.css'
 
 interface IProps {
     list: string[]
@@ -22,12 +23,6 @@ const History: React.FC<IProps> = (props) => {
 
     return (
         <div className="history">
-            <Button 
-                type="primary" 
-                shape="circle" 
-                icon={<DeleteOutlined />} 
-                onClick={() => onClean()}
-            />
             <ul className="history_list">
                 {_.map(list, (itm, idx) => <li 
                     className="history_item"
@@ -37,6 +32,12 @@ const History: React.FC<IProps> = (props) => {
                     { itm }
                 </li>)}
             </ul>
+            <Button 
+                type="primary" 
+                shape="circle" 
+                icon={<DeleteOutlined />} 
+                onClick={() => onClean()}
+            />
         </div>
     )
 }

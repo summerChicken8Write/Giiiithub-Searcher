@@ -1,0 +1,16 @@
+.history {
+    display: flex;
+}
+.history_list {
+    flex: 1 1 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.history_item {
+    padding: 3px 8px;
+    margin: 3px;
+    font-size: 18px;
+    border-radius: 3px;
+    border: 1px solid #999;
+    cursor: pointer;
+}
