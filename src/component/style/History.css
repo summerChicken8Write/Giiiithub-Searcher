@@ -7,10 +7,15 @@
     flex-wrap: wrap;
 }
 .history_item {
-    padding: 3px 8px;
+    padding: 2px 5px;
     margin: 3px;
     font-size: 18px;
     border-radius: 3px;
     border: 1px solid #999;
     cursor: pointer;
+}
+.history_item:hover {
+    color: #45ccfa;
+    border: 1px solid #45ccfa;
+    box-shadow: 0 0 2px 2px #45cdfa71;
 }

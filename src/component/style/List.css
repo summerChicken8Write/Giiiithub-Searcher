@@ -1,0 +1,23 @@
+.list_item--name {
+    color: #0366d6;
+    cursor: pointer;
+}
+.list_item--name:hover {
+    text-decoration: underline;
+}
+.list_item--description {
+    margin-left: 10px;
+}
+.list_item--info {
+    margin-left: 10px;
+}
+.list_item--circle {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin: 0 5px 0 10px;
+    border-radius: 50%;
+}
+.list_item--update {
+    margin-left: 10px;
+}

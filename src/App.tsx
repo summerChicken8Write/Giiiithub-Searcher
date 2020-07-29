@@ -77,11 +77,21 @@ const App: React.FC = () => {
                         node {
                             ... on Repository {
                                 id
-                                name
+                                nameWithOwner
                                 description
                                 descriptionHTML 
+                                updatedAt 
                                 stargazers {
                                     totalCount
+                                }
+                                languages(first: 1) {
+                                    edges {
+                                        node {
+                                            id
+                                            color
+                                            name
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -138,7 +148,7 @@ const App: React.FC = () => {
             <div className="filter-wrapper">
                 <Select
                     style={{
-                        width: '200px'
+                        width: '150px'
                     }}
                     value={ sortRule }
                     onChange={(value: string) => {
@@ -155,7 +165,7 @@ const App: React.FC = () => {
                     listData={ listData }
                     highlightKey={ searchWord }
                 />
-                {!loading && <div className="list-wrapper-loading">
+                {loading && <div className="list-wrapper-loading">
                     <Spin />
                 </div>}
             </div>
